@@ -1,6 +1,6 @@
 # ROADMAP — dsh-meta-community
 
-**Version `0.9.0` is a PRE-RELEASE.** It is published on the `next` dist-tag and it is under active development: the surface below is what `1.0.0` still requires, not a wish list appended after the fact.
+**Version `0.9.1-next.1` is a PRE-RELEASE.** It is built locally for the `next` dist-tag and it is **NOT published to npm yet**; it is under active development: the surface below is what `1.0.0` still requires, not a wish list appended after the fact.
 
 ## What this package is
 

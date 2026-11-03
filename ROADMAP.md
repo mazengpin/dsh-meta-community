@@ -1,6 +1,6 @@
 # ROADMAP — dsh-meta-community
 
-**Version `0.9.1-next.2` is a PRE-RELEASE.** It is built locally for the `next` dist-tag and it is **NOT published to npm yet**; it is under active development: the surface below is what `1.0.0` still requires, not a wish list appended after the fact.
+**Version `0.9.1-next.3` is a PRE-RELEASE.** It is built locally for the `next` dist-tag and it is **NOT published to npm yet**; it is under active development: the surface below is what `1.0.0` still requires, not a wish list appended after the fact.
 
 ## What this package is
 
@@ -8,7 +8,7 @@ The community half: a recognised set of independently operated instances that fu
 
 ## What is measured today
 
-`pnpm test` green: host-half 42 of 42, node-half 37 of 37, consensus-unit 72 of 72; `npm pack --dry-run` 38 files / 718.3 kB; built export resolves to `{name, apply, inject:["webServer"]}`. Server-only by design: 0 client halves.
+`pnpm test` is **RED, exit code `1`**, measured 2026-11-03 on this tree: host-half **42 of 42** (exit 0), node-half **36 of 37** with **E3 FAILED**, consensus-unit not run (the `&&` chain stops at the first red suite). E3's failure is real and stated rather than silenced: the baked `docker/snapshots/meta-packages.json` no longer satisfies its own declared `documentSha256` (`TAMPERED`: declared `09968bea…`, recomputed `094a3e8b…`; file mtime 2026-11-03 12:54), so `/node/meta-packages` reports `available:false`. The repair is the package's own capture path plus a rebuild, and it is an owner step: `node docker/tools/capture-meta-packages.mjs --url <meta-market-gui-health-url> --out docker/snapshots/meta-packages.json`, then `pnpm run build`, then `node src/node/verify/node-half.mjs`. `npm pack` of this release: **45 files** (43 staged paths plus the two `research-*.md` documents, VERIFIED from the packed tarball). Built export resolves to `{name, apply, inject:["webServer"]}`. Server-only by design: 0 client halves.
 
 ## What 1.0.0 still requires
 

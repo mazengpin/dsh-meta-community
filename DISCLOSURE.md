@@ -10,11 +10,11 @@ This plugin is not `dsh-meta-market`. It does not supersede it, it reads none of
 
 ## 2. What it does today
 
-`pnpm test` is green, exit code `0`, measured 2026-11-03 (all figures are `passed / declared` from the harnesses' own census lines).
+`pnpm test` is **RED, exit code `1`**, measured 2026-11-03 on this tree (all figures are `passed / declared` from the harnesses' own census lines). This file previously claimed a green suite; the claim is corrected here in place because the artifact moved and the claim did not.
 
-- host half: **42 of 42** (`node src/host/verify/host-half.mjs`).
-- node half: **37 of 37** (`node src/node/verify/node-half.mjs`).
-- consensus-unit: **72 of 72** (`node src/node/verify/consensus-unit.mjs`), with **5 of 5** required consensus outcomes reached: `committed`, `rejected-peer-disagrees`, `quorum-lost`, `refused-lone-node`, `refused-non-meta-key`.
+- host half: **42 of 42** (`node src/host/verify/host-half.mjs`) — exit 0.
+- node half: **36 of 37** (`node src/node/verify/node-half.mjs`) — **E3 FAILED**. The baked `docker/snapshots/meta-packages.json` no longer satisfies its own declared `documentSha256` (`TAMPERED`: declared `09968bea826a438b18d2569602ac91bd9785913135de027b1f9962e41e588801`, recomputed `094a3e8b4eba8c48f63891ab845921412d37a1b2c8803944d8bb6f4e420a9f7b`; file mtime `2026-11-03 12:54`), so `GET /node/meta-packages` answers `available:false` and E3's `available === true` assertion fails. The digest is NOT hand-edited to silence the loader; the repair is the package's own capture path plus a rebuild, and it is an owner step: `node docker/tools/capture-meta-packages.mjs --url <meta-market-gui-health-url> --out docker/snapshots/meta-packages.json`, then `pnpm run build`, then `node src/node/verify/node-half.mjs`.
+- consensus-unit: **not run in the failing suite** — `pnpm test` chains with `&&` and stops at the first red command. The unit suite is independently runnable as `node src/node/verify/consensus-unit.mjs`; its 72 checks are not claimed measured by this release.
 
 `pnpm run typecheck` (`tsc --noEmit`) exits `0`; `pnpm run build` (`tsdown`) exits `0` and writes `lib/index.js` at **36.94 kB**.
 The built export resolves to an object with exactly the keys `apply`, `inject`, `name`; `name` is `dsh-meta-community` and `inject` is `["webServer"]` — measured by importing `./lib/index.js`, not read from source.

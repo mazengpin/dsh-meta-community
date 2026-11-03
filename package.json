@@ -14,7 +14,6 @@
   "files": [
     "lib",
     "src",
-    "docker",
     "cordis.patch.yml",
     "CHARTER.md",
     "README.md",

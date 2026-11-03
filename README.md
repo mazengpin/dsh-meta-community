@@ -61,6 +61,19 @@ NODE_ID=node-a node src/node/index.ts
 
 `NODE_ID` is the only required variable. The rest default (`PORT=8090`, `SNAPSHOT_DIR=/app/snapshots`, `COMMIT_TIMEOUT_MS=1500`); a variable that is present and malformed is a named refusal with a non-zero exit, never a silent coercion. Two pre-calculated snapshots are baked in and loaded once at boot: `docker/snapshots/intent-map.json` and `docker/snapshots/meta-packages.json`.
 
+## Roadmap at a glance
+
+A glance, not a second record: the authoritative list — with the evidence for every done row, the reason for every deferred one and the rows marked `NOT MEASURED` — is [`ROADMAP.md`](ROADMAP.md). Where this list and that file differ, that file is right and this list is the defect.
+
+- **What this package is**
+- **What is measured today**
+- **What 1.0.0 still requires**
+- **Limits, stated rather than implied**
+- **Compatibility seam**
+- **How this roadmap is graded**
+
+The roadmap currently carries **0** row(s) marked `NOT MEASURED`; a row moves to done only when its own command prints a green result.
+
 ## Checks
 
 ```

@@ -1,0 +1,60 @@
+# dsh-meta-community — bundle patch.
+#
+# ============================================================================
+# THIS FILE WAS MALFORMED AND MADE ITS OWN BUNDLE UNLOADABLE. CORRECTED
+# 2026-10-18 BY THE LEAD. Read this before "restoring" the row below.
+# ============================================================================
+#
+# WHAT WAS HERE, verbatim (kept so the defect is auditable rather than edited
+# out of memory):
+#
+#   patch:
+#     - op: insert
+#       path: /plugins/-
+#       value:
+#         id: dsh-meta-community
+#         module: dsh-meta-community
+#
+# THAT IS AN INVENTED SCHEMA. The loader requires a **top-level YAML array of
+# loader patch entries**; this was a MAPPING whose single key was `patch:`, and
+# its inner shape (`op` / `path` / `value`, and a `module:` key) exists nowhere
+# in the loader. Measured consequence: the profile boot emitted
+#
+#   dsh: skipping profile bundle "dsh-meta-community": Error: ...\node_modules\
+#   dsh-meta-community\cordis.patch.yml must be a top-level YAML array of
+#   loader patch entries
+#
+# and the bundle contributed **0 rows** to a 260-entry composition. The sibling
+# `dsh-meta-market` patch composes fine — because it is `- insert: - id: ... /
+# name: '...'`, i.e. an array of entries using `name`, not a mapping using
+# `module`. SO THE HEADER THAT STOOD HERE — "The bundle format is the same one
+# `dsh-meta-market` uses" — WAS FALSE, and it was false in the dangerous
+# direction: a reader who believed it would conclude the loader was at fault
+# rather than this file. (Program record `D-0073`: a true statement of scope
+# attached to a false justification is worse than no statement.)
+#
+# WHY THIS FILE IS NOW AN EMPTY ARRAY INSTEAD OF A CORRECTED ROW. A row insert
+# CANNOT be hot-landed from here: the HMR watches the profile's `package.json`
+# and the profile's own `cordis.patch.yml`, NOT a bundle's patch file, so a fix
+# in this file only takes effect at the next boot. Meanwhile the mount has to
+# happen NOW, and the only hot path is the profile patch layer. Two mechanisms
+# inserting the SAME row id would be a duplicate, and two rows mounting one
+# plugin would register `/meta-community/api` twice. So there is exactly ONE
+# owner of the row, and it is the PROFILE layer:
+#
+#   profiles-tree/personal-dev/cordis.patch.yml
+#     - insert:
+#         - id: dsh-meta-community
+#           name: 'dsh-meta-community'
+#
+# This is the same ownership split this profile already uses for `dsh-ops`,
+# `image-gen` and `dsh-memory-delta`, whose rows live in the profile patch and
+# are not restated by their bundles. An empty array is still a top-level array,
+# which is all the loader demands, so the bundle is loadable and contributes
+# nothing by design rather than by defect.
+#
+# IF YOU LATER WANT THE BUNDLE TO OWN ITS OWN ROW AGAIN: move the row back into
+# this file as `- insert: - id: dsh-meta-community / name: 'dsh-meta-community'`
+# and DELETE the profile-layer row in the SAME change. Never leave both.
+[]
+

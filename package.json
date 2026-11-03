@@ -1,0 +1,51 @@
+{
+  "name": "dsh-meta-community",
+  "version": "0.9.0",
+  "type": "module",
+  "description": "The community half of the Web4 meta layer: a recognised set of independently operated harness instances that fuse their meta-packages under MULTIPLE authenticated authors, carry the owner's five clauses as machine-readable data, and hold a standing conformance check that goes RED when a clause has no artifact behind it.",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./src/*": "./src/*",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "docker",
+    "cordis.patch.yml",
+    "CHARTER.md",
+    "README.md",
+    "LICENSE",
+    "ROADMAP.md",
+    "DISCLOSURE.md"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.0-0 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "verify": "node src/host/verify/host-half.mjs",
+    "check": "npm run typecheck && npm run build && npm run verify",
+    "prepack": "npm run build",
+    "test": "node src/host/verify/host-half.mjs && node src/node/verify/node-half.mjs && node src/node/verify/consensus-unit.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsdown": "^0.22.2",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "tag": "next"
+  },
+  "status": "pre-release"
+}

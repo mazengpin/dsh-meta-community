@@ -1,10 +1,10 @@
 # dsh-meta-community
 
-> **Status: PRE-RELEASE `0.9.1-next.1` — built locally, NOT yet published to npm.** The intended dist-tag is `next`, not `latest`; the tarball is produced in `pre_release/_artifacts/` and publishing is an owner step, never performed by this repository.
+> **Status: PRE-RELEASE `0.9.1-next.2` — built locally, NOT yet published to npm.** The intended dist-tag is `next`, not `latest`; the tarball is produced in `pre_release/_artifacts/` and publishing is an owner step, never performed by this repository.
 > Its API, wire records and panel contracts may change between `0.9.x` releases, and each package carries its own `ROADMAP.md` naming what `1.0.0` still requires.
 > A published tarball is a snapshot of a moving surface: read `ROADMAP.md` before depending on a shape.
 
-Pre-release version `0.9.1-next.1`. The community half of the Web4 meta layer: a recognised set of independently operated DSH harness instances that fuse their meta-packages under MULTIPLE authenticated authors, carry the owner five clauses as machine-readable data, and hold a standing conformance check that goes RED when a clause has no artifact behind it.
+Pre-release version `0.9.1-next.2`. The community half of the Web4 meta layer: a recognised set of independently operated DSH harness instances that fuse their meta-packages under MULTIPLE authenticated authors, carry the owner five clauses as machine-readable data, and hold a standing conformance check that goes RED when a clause has no artifact behind it.
 
 This plugin is separate from `dsh-meta-market`. It does not supersede it, it reads none of its files, and its surface is its own.
 

@@ -1,6 +1,6 @@
 {
   "name": "dsh-meta-community",
-  "version": "0.9.1-next.1",
+  "version": "0.9.1-next.2",
   "type": "module",
   "description": "The community half of the Web4 meta layer: a recognised set of independently operated harness instances that fuse their meta-packages under MULTIPLE authenticated authors, carry the owner's five clauses as machine-readable data, and hold a standing conformance check that goes RED when a clause has no artifact behind it.",
   "license": "MIT",
@@ -14,6 +14,7 @@
   "files": [
     "lib",
     "src",
+    "docker",
     "cordis.patch.yml",
     "README.md",
     "LICENSE",

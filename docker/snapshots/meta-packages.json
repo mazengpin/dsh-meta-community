@@ -1,0 +1,257 @@
+{
+  "source": "http://127.0.0.1:3083/meta-market/api/gui/health",
+  "capturedAt": "2026-10-19T11:11:24.569Z",
+  "status": 200,
+  "bytes": 7762,
+  "sha256": "f5ad84349b170ddd88137a4e5195a7b632d7bb1b03cdfc1ff856bf03f59ae3d9",
+  "documentSha256": "09968bea826a438b18d2569602ac91bd9785913135de027b1f9962e41e588801",
+  "document": {
+    "ok": true,
+    "generatedAt": "2026-10-19T11:10:37.914Z",
+    "identity": {
+      "id": "dsh-meta-market",
+      "kind": "exists",
+      "mounted": true,
+      "prefix": "/meta-market/api",
+      "specVersion": 1,
+      "stepVersion": 1,
+      "authenticated": false
+    },
+    "mounted": true,
+    "mount": {
+      "mounted": true,
+      "manifestPath": "<home>\\Projects\\deepseek-root\\profiles-tree\\personal-dev\\package.json",
+      "manifestBytes": 4487,
+      "linkedInDependencies": true,
+      "listedInBundles": true,
+      "bundlesCensus": {
+        "entries": 49,
+        "containsPackage": 1
+      },
+      "searchedFrom": "<home>\\Projects\\deepseek-root\\plugins-src\\dsh-meta-market\\lib",
+      "measuredAt": "2026-10-19T11:11:24.312Z",
+      "reason": null
+    },
+    "served": {
+      "origin": "http://127.0.0.1:3083",
+      "prefixStatus": 200,
+      "guiStatus": 200,
+      "at": "2026-10-19T11:11:24.312Z",
+      "reason": null,
+      "timeoutMs": 400
+    },
+    "windowsAnswered": 10,
+    "answeredWindows": [
+      "meta-plugins",
+      "meta-tools",
+      "meta-skills",
+      "meta-memory",
+      "meta-intent",
+      "advanced",
+      "meta-agents",
+      "meta-loops",
+      "meta-cordis",
+      "meta-community"
+    ],
+    "census": {
+      "numerator": 10,
+      "denominator": 10,
+      "population": "the ten windows in the CONTRACT; answered means the provider landed, did not throw, and did not report itself unavailable",
+      "at": "2026-10-19T11:10:37.914Z"
+    },
+    "staleCensus": {
+      "reporting": 9,
+      "degraded": 1,
+      "total": 10,
+      "population": "the ten windows: `reporting` counts providers that WROTE the stale key; `degraded` counts those whose written value is a marker rather than null"
+    },
+    "windows": [
+      {
+        "id": "meta-plugins",
+        "provider": "plugins",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/plugins.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 55,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-tools",
+        "provider": "tools",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/tools.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 4,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-skills",
+        "provider": "skills",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/skills.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 26,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-memory",
+        "provider": "memory",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/memory.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 5,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": false
+      },
+      {
+        "id": "meta-intent",
+        "provider": "intent",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/intent.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 4,
+        "unavailable": null,
+        "stale": {
+          "reason": "this window answered, and 1 of 4 of its live probes did not succeed: planRagSearch served from its last good reading of 2026-10-19T11:06:19.854Z (263 s old) because the live read failed: no response within 5000 ms — slow, which is not the same as down. The bound on each probe is 5000 ms; a probe that exceeded it is reported as silence for that long, never as an absence of the underlying fact.",
+          "boundMs": 5000,
+          "at": "2026-10-19T11:10:43.116Z"
+        },
+        "staleReported": true
+      },
+      {
+        "id": "advanced",
+        "provider": "advanced",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/advanced.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 4,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-agents",
+        "provider": "advanced",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/advanced.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 5,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-loops",
+        "provider": "advanced",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/advanced.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 14,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-cordis",
+        "provider": "advanced",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/advanced.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 15,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      },
+      {
+        "id": "meta-community",
+        "provider": "advanced",
+        "providerPath": "plugins-src/dsh-meta-market/src/host/providers/advanced.ts",
+        "providerLanded": true,
+        "answered": true,
+        "items": 11,
+        "unavailable": null,
+        "stale": null,
+        "staleReported": true
+      }
+    ],
+    "providers": [
+      {
+        "key": "plugins",
+        "path": "plugins-src/dsh-meta-market/src/host/providers/plugins.ts",
+        "landed": true
+      },
+      {
+        "key": "tools",
+        "path": "plugins-src/dsh-meta-market/src/host/providers/tools.ts",
+        "landed": true
+      },
+      {
+        "key": "skills",
+        "path": "plugins-src/dsh-meta-market/src/host/providers/skills.ts",
+        "landed": true
+      },
+      {
+        "key": "memory",
+        "path": "plugins-src/dsh-meta-market/src/host/providers/memory.ts",
+        "landed": true
+      },
+      {
+        "key": "intent",
+        "path": "plugins-src/dsh-meta-market/src/host/providers/intent.ts",
+        "landed": true
+      },
+      {
+        "key": "advanced",
+        "path": "plugins-src/dsh-meta-market/src/host/providers/advanced.ts",
+        "landed": true
+      }
+    ],
+    "routes": {
+      "advertised": 20,
+      "paths": [
+        "/meta-market/api",
+        "/meta-market/api/lanes",
+        "/meta-market/api/patch/status",
+        "/meta-market/api/patch/verify",
+        "/meta-market/api/patch/stage",
+        "/meta-market/api/patch/revert",
+        "/meta-market/api/patch/promotion-rule",
+        "/meta-market/api/patch/self-check",
+        "/meta-market/api/patch/quarantine",
+        "/meta-market/api/patch/read",
+        "/meta-market/api/patch/blindness",
+        "/meta-market/api/alignment",
+        "/meta-market/api/dialogue",
+        "/meta-market/api/identity",
+        "/meta-market/api/safety",
+        "/meta-market/api/social",
+        "/meta-market/api/hosting",
+        "/meta-market/api/gui/sections",
+        "/meta-market/api/gui/section",
+        "/meta-market/api/gui/health"
+      ]
+    },
+    "gaps": [],
+    "falsifiers": [
+      {
+        "claim": "every window reported as answered has a provider that landed",
+        "how": "in this same payload, filter `windows` for `answered === true` and require `providerLanded === true` on every row; a row where they disagree means the count is not derived from the table printed beside it"
+      },
+      {
+        "claim": "no path advertised under `routes.paths` returns 404 when driven",
+        "how": "request each advertised path and require none to answer 404; 200, 400 and 405 are all honest answers, and absence is not — this is the check `tmp/mmg-host-drive.mjs` performs and prints as a numerator over the advertised count"
+      },
+      {
+        "claim": "the answered numerator is not a constant",
+        "how": "temporarily make one provider throw, re-run the drive, and require `windowsAnswered` to decrease by exactly one while `gaps` names that window; a numerator that does not move is a caption"
+      }
+    ]
+  }
+}

@@ -5,6 +5,7 @@
 `dsh-meta-community` is the **community half of the Web4 layer**: a recognised set of independently operated DSH harness instances that fuse their meta-packages, carry the owner's five clauses as machine-readable data, and hold a standing conformance check that goes RED when a clause has no artifact behind it.
 The governing document is [`CHARTER.md`](CHARTER.md) — the article of record for this clone, stating what it is, what it carries of the owner's directive, what it demonstrably does, and in the same voice what it does not.
 The node image it ships is [`docker/`](docker/): `docker/Dockerfile`, `docker/compose.yaml`, `docker/nodes.env` and the two-container topology they define, with the interface contract in [`docker/NODE-CONTRACT.md`](docker/NODE-CONTRACT.md).
+[`CONTEXT.md`](CONTEXT.md) is the reconstruction guide: the problem, the context, the intent and what was deliberately not attempted, the alternatives and why they were rejected, and numbered steps to rebuild a working environment.
 This plugin is not `dsh-meta-market`. It does not supersede it, it reads none of its files, and its surface is its own.
 
 ## 2. What it does today
@@ -76,4 +77,4 @@ There is no `repository` field in `package.json`. **The release owner sets the `
 The `pnpm install` / `pnpm run build` / relative `link:` route in [`README.md`](README.md) is for **developing this clone**, not for consuming it: it needs the source tree, this machine's toolchain, and a manual profile edit a consumer does not have.
 The `docker compose` route is for **running a node**, not for using the plugin.
 A consumer of the plugin installs **only the published pre-release tarball**, which arrives on the `next` dist-tag (`publishConfig.tag: "next"`, `status: "pre-release"`); that tarball does not exist yet.
-`npm pack --dry-run` measured on 2026-11-03, with this file added to `files`, gives **40 files / 730.5 kB** unpacked and **211.1 kB** packed; the earlier published reading of **38 files / 718.3 kB** did **not** reproduce before this edit either (the same command then reported 39 files / 720.0 kB with `DISCLOSURE.md` absent), so the measured reading is the one stated and the older pair is not carried forward.
+`npm pack --dry-run` measured on 2026-11-03, with this file added to `files`, gives **41 files / 739.0 kB** unpacked and **213.8 kB** packed; the earlier published reading of **38 files / 718.3 kB** did **not** reproduce before this edit either (the same command then reported 39 files / 720.0 kB with `DISCLOSURE.md` absent), so the measured reading is the one stated and the older pair is not carried forward.
